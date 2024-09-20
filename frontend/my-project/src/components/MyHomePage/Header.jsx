@@ -152,7 +152,7 @@ const Header = () => {
           style={{ fontWeight: "bold", color: "black",fontSize: "20px",  }}
           onClick={() => nav("/MyWishList")}
         >
-          <FaHeart style={{fontSize:'20px'}} />
+          <FaHeart style={{fontSize:'20px',marginBottom:'10px'}} />
         </Nav.Link>
 
         {cartProducts.length === 0 ? (
@@ -160,7 +160,7 @@ const Header = () => {
             style={{ fontWeight: "bold", color: "black" }}
             onClick={() => nav("/AddToCart")}
           >
-            <FaShoppingCart style={{fontSize:'20px'}}/>
+            <FaShoppingCart style={{fontSize:'20px',marginBottom:'4px'}}/>
           </Nav.Link>
         ) : (
           <>
@@ -168,7 +168,7 @@ const Header = () => {
               style={{ fontWeight: "bold", color: "black",display:"flex"}}
               onClick={() => nav("/AddToCart")}
             >
-              <FaShoppingCart style={{fontSize:'20px'}}/>
+              <FaShoppingCart style={{fontSize:'20px',marginTop:'0px'}}/>
             </Nav.Link>
             <button className="cart-countH">{cartProducts.length}</button>
             

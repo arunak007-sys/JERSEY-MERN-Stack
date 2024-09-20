@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../SignIn/SignIn.css";
 import lionImage from "../images/ar7.jpeg";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { myContext } from "../context/context";
 
 export default function SignIn() {
   const nav = useNavigate();
+
+  const {setCart} = useContext(myContext)
 
   const [newEmail, setNewEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");

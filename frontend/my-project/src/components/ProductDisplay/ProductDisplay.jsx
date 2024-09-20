@@ -61,6 +61,7 @@ export default function ProductDisplay() {
                   alt=""
                   height={500}
                   width={500}
+                  className="prodImg"
                 />
               </div>
               <div style={{ margin: "10px" }}>
@@ -69,6 +70,7 @@ export default function ProductDisplay() {
                   height={250}
                   width={700}
                   alt=""
+                  className="chartss"
                 />
               </div>
             </div>
@@ -143,6 +145,7 @@ export default function ProductDisplay() {
                   flexDirection: "row",
                   marginTop: "20px",
                 }}
+                className="btnzzzz1"
               >
                 <div>
 

@@ -114,7 +114,7 @@ useEffect(() => {
 
 const getCartProducts = async () => {
   try{
-
+  
       const response = await axios.get(`http://localhost:8000/api/user/getCart/${userId}`)
       const data = response.data.cart.cart
       console.log("response", data)

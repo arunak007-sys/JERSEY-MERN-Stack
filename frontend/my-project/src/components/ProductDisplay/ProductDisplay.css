@@ -25,3 +25,37 @@
 li{
     color: grey;
 }
+
+@media (max-width: 768px) {
+    .prodDisp{
+        display: flex;
+        flex-direction: column;
+    }
+    .prod-leftSection{
+        /* background: red; */
+        
+        /* border-style: none; */
+        width: 100%;
+        border-style: grnoneoove;
+    }
+    .prod-rightSection{
+        /* background:black; */
+        width: 100%;
+        border-style: grnoneoove;
+    }
+    .chartss{
+        width:  389px;
+    }
+    .prodImg{
+        width: 400px;
+    }
+    .prodDisp{
+        
+        margin: 0;
+    }
+    .btnzzzz1{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+}

@@ -43,15 +43,22 @@ export default function AddToCart() {
 
  
 
-  function IncreementBtn(id){
-    // const newQty = cartProducts.map((item) => 
-    //   item._id === id?{...item,qty:item.qty+1}:item
-    //   )
-  
-      
-  
-      // setCartProducts(newQty)
-    
+  const IncreementBtn = async (data) => {
+    try{
+
+      const response = await axios.put(`http://localhost:8000/api/user/increementCartQuantity/${userId}`,{
+        productId:data._id
+      })
+      const datas = response.data.cart
+      console.log("response", response.data.cart)
+      if(response.status === 200){
+        setCartProducts(datas)
+      }
+
+    }
+    catch(error){
+      console.log(error)
+    }
   }
 
   function DecreementBtn(id){
@@ -113,7 +120,7 @@ export default function AddToCart() {
                         <div className="dropDwonQuantity" style={{display:'flex',flexDirection:'row',marginBottom: '60px' }}> 
                         <button onClick={()=>data.qty>1 ? DecreementBtn(data.id) : removeWishList} style={{border:'none'}}>-</button> &nbsp;
                         <button  style={{borderRadius:'20px',height:'30px',width:'30px'}} >{data.qty}</button>&nbsp;
-                        <button onClick={()=>IncreementBtn(data._id)} style={{border:'none'}}>+</button></div>
+                        <button onClick={()=>IncreementBtn(data)} style={{border:'none'}}>+</button></div>
                       
                     </div>
 

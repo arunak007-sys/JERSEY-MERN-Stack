@@ -248,6 +248,14 @@ const increementCartQuantity = async (req, res) => {
         const { userId } = req.params;
         const { productId } = req.body;
 
+        // Validate the inputs (Optional but recommended)
+        if (!userId || !productId) {
+            return res.status(400).json({
+                status: "fail",
+                message: "User ID and Product ID are required",
+            });
+        }
+
         // Find the user's cart
         const user = await Cart.findOne({ userId });
 
@@ -276,21 +284,20 @@ const increementCartQuantity = async (req, res) => {
         await user.save();
 
         return res.status(200).json({
-
-            
             status: "success",
             message: "Quantity updated successfully",
             cart: user.cart, // Return the updated cart
         });
 
     } catch (error) {
-        console.error(error);
+        console.error("Error incrementing cart quantity:", error);
         return res.status(500).json({
             status: "error",
             message: "An error occurred while updating the quantity",
         });
     }
 };
+
 
 
 
